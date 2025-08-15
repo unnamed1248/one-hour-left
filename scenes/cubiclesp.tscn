@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0nxd8x3mi1e6"]
+
+[ext_resource type="PackedScene" uid="uid://cixib2j4yoiok" path="res://assets/cubicle.glb" id="2_u827c"]
+[ext_resource type="PackedScene" uid="uid://bhyg76eqgl26u" path="res://assets/laptop.glb" id="3_o1i2v"]
+[ext_resource type="PackedScene" uid="uid://d4g0ggtggi0nq" path="res://assets/calc.glb" id="4_ow8jq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xj1em"]
+size = Vector3(1, 0.1, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hcm4j"]
+size = Vector3(0.1, 2.5, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0u36o"]
+size = Vector3(3, 2.5, 0.1)
+
+[node name="cubicle" type="StaticBody3D"]
+
+[node name="cubicle" parent="." instance=ExtResource("2_u827c")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+shape = SubResource("BoxShape3D_xj1em")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+shape = SubResource("BoxShape3D_hcm4j")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23517e-08, 0, -2)
+shape = SubResource("BoxShape3D_0u36o")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23517e-08, 0, -6)
+shape = SubResource("BoxShape3D_0u36o")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23517e-08, 0, 2)
+shape = SubResource("BoxShape3D_0u36o")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23517e-08, 0, 6)
+shape = SubResource("BoxShape3D_0u36o")
+
+[node name="laptops" type="Node3D" parent="."]
+
+[node name="laptop" parent="laptops" instance=ExtResource("3_o1i2v")]
+transform = Transform3D(-2, 0, 3.01992e-07, 0, 2, 0, -3.01992e-07, 0, -2, 0.8, 0.07, 0)
+
+[node name="laptop2" parent="laptops" instance=ExtResource("3_o1i2v")]
+transform = Transform3D(-2, 0, 3.01992e-07, 0, 2, 0, -3.01992e-07, 0, -2, 0.8, 0.07, -4.5)
+
+[node name="calcs" type="Node3D" parent="."]
+
+[node name="calc" parent="calcs" instance=ExtResource("4_ow8jq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 0.08, -3.9)

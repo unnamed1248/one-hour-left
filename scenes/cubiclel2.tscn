@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://ba242b5hhfgkp"]
+
+[ext_resource type="PackedScene" uid="uid://cixib2j4yoiok" path="res://assets/cubicle.glb" id="1_fnlei"]
+[ext_resource type="Script" uid="uid://cx6q8w70mx3or" path="res://scenes/cubiclel2.gd" id="2_81l43"]
+[ext_resource type="PackedScene" uid="uid://cii7goi5rl3ba" path="res://assets/laptopstand.glb" id="2_n76yv"]
+[ext_resource type="PackedScene" uid="uid://bhyg76eqgl26u" path="res://assets/laptop.glb" id="3_81l43"]
+[ext_resource type="PackedScene" uid="uid://c5rfpty6gw1et" path="res://assets/monitor.glb" id="4_ovlxg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n76yv"]
+size = Vector3(1, 0.1, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_81l43"]
+size = Vector3(0.1, 2.5, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ovlxg"]
+size = Vector3(3, 2.5, 0.1)
+
+[node name="cubicle" instance=ExtResource("1_fnlei")]
+script = ExtResource("2_81l43")
+
+[node name="laptops" type="Node3D" parent="." index="1"]
+
+[node name="laptop" parent="laptops" index="0" instance=ExtResource("3_81l43")]
+transform = Transform3D(-1.42596, -0.465443, 2.26494e-07, -0.465443, 1.42596, 3.67441e-08, -2.26716e-07, -3.53495e-08, -1.5, 0.946, 0.15, -0.875)
+
+[node name="laptop2" parent="laptops" index="1" instance=ExtResource("3_81l43")]
+transform = Transform3D(-1.42596, -0.465443, -1.31134e-07, -0.465443, 1.42596, 8.80057e-08, 9.73536e-08, 1.24352e-07, -1.5, 0.9, 0.15, -4.6)
+
+[node name="laptop3" parent="laptops" index="2" instance=ExtResource("3_81l43")]
+transform = Transform3D(-1.42577, -0.466015, -1.31134e-07, -0.466015, 1.42577, 0, 1.24645e-07, 4.07403e-08, -1.5, 0.9, 0.15, 3.6)
+
+[node name="stands" type="Node3D" parent="." index="2"]
+
+[node name="laptopstand" parent="stands" index="0" instance=ExtResource("2_n76yv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.953846, 0.2, -0.879661)
+
+[node name="laptopstand2" parent="stands" index="1" instance=ExtResource("2_n76yv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.9, 0.2, -4.6)
+
+[node name="laptopstand3" parent="stands" index="2" instance=ExtResource("2_n76yv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.9, 0.2, 3.6)
+
+[node name="monitors" type="Node3D" parent="." index="3"]
+
+[node name="monitor" parent="monitors" index="0" instance=ExtResource("4_ovlxg")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 1.1, 0.08, 0.4)
+
+[node name="monitor2" parent="monitors" index="1" instance=ExtResource("4_ovlxg")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 1.1, 0.08, -3.6)
+
+[node name="monitor3" parent="monitors" index="2" instance=ExtResource("4_ovlxg")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 1.1, 0.08, 4.7)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+collision_layer = 4
+collision_mask = 30
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+shape = SubResource("BoxShape3D_n76yv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+shape = SubResource("BoxShape3D_81l43")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23517e-08, 0, -2)
+shape = SubResource("BoxShape3D_ovlxg")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23517e-08, 0, -6)
+shape = SubResource("BoxShape3D_ovlxg")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23517e-08, 0, 2)
+shape = SubResource("BoxShape3D_ovlxg")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23517e-08, 0, 6)
+shape = SubResource("BoxShape3D_ovlxg")

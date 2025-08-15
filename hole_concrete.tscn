@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=4 uid="uid://comv3vwtupkml"]
+
+[ext_resource type="Texture2D" uid="uid://b5rj4ayrkkrxt" path="res://assets/hole concrete_Poliigon_ConcreteWallCladding_7856_BaseColor.jpg" id="1_lh2jg"]
+[ext_resource type="Texture2D" uid="uid://chwlfumolr4po" path="res://assets/hole concrete_Poliigon_ConcreteWallCladding_7856_Metallic_1K_jpg-Poliigon_ConcreteWallCladding_7856_Roughness_1K_jpg.png" id="2_cyjb8"]
+[ext_resource type="Texture2D" uid="uid://hnaqttdtpxp0" path="res://assets/hole concrete_Poliigon_ConcreteWallCladding_7856_Normal.png" id="3_vghrn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8m7f"]
+resource_name = "Poliigon_ConcreteWallCladding_7856_1K"
+cull_mode = 2
+albedo_texture = ExtResource("1_lh2jg")
+metallic = 1.0
+metallic_texture = ExtResource("2_cyjb8")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_cyjb8")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_vghrn")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sxyiy"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEAAwAFAAIABQAAAAIABgAEAAAABQAGAAAABwABAAQABwADAAEABgAHAAQABQADAAcABQAHAAYA"),
+"name": "Poliigon_ConcreteWallCladding_7856_1K",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAP//AAD///////8AAAAAAAAAAAAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ywdm1"]
+resource_name = "hole concrete_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/5//f//f/z//3/9//5//P/9f/z//nwAA/5//P/9fAAD/X////5//v/+f////X/+//x//f/9f/z//X/9//x//P/9f/3//n/8//5//f/9f/z//X/+//5//f/+f/7//X/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_u8m7f"),
+"name": "Poliigon_ConcreteWallCladding_7856_1K",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA//8AAP///////wAA//8AAP///////////////wAA////vwAA//////+//////////78AAAAA////vwAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA/7///wAA////v///AAAAAP+/AAAAAP///7///wAAAABU1f///////1TV/////wAAVNX//wAA//9U1QAAAAAAAP///////wAA//8AAP//AAD/////AAAAAP///3//v/9//7//f/+//3//v/////////////////////9U1VTVVNVU1VTVVNVU1VTVAAD/fwAA/38AAP9/AAD/f6oqqiqqKqoqqiqqKqoqqir/v/+//7//v/+//7//v/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_sxyiy")
+
+[node name="hole concrete" type="Node3D"]
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_ywdm1")
+skeleton = NodePath("")

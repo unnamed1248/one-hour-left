@@ -1,0 +1,188 @@
+[gd_scene load_steps=9 format=3 uid="uid://qvmo5dt014na"]
+
+[ext_resource type="PackedScene" uid="uid://ctuqhy2otx3t7" path="res://scenes/level.tscn" id="1_1qxhp"]
+[ext_resource type="Script" uid="uid://b56w4e5b7rn5" path="res://l2.gd" id="2_ep7gu"]
+[ext_resource type="Material" uid="uid://bxh83bh53g4ty" path="res://scenes/concrete.tres" id="4_7d56s"]
+[ext_resource type="Material" uid="uid://bdr57arjyb001" path="res://scenes/hole_concrete.tres" id="5_7d56s"]
+[ext_resource type="PackedScene" uid="uid://ba242b5hhfgkp" path="res://scenes/cubiclel2.tscn" id="5_ep7gu"]
+[ext_resource type="PackedScene" uid="uid://4ckxi24wrjbb" path="res://scenes/NPC.tscn" id="6_c1p2k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c1p2k"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_c1p2k"]
+radius = 2.8
+
+[node name="L2" instance=ExtResource("1_1qxhp")]
+script = ExtResource("2_ep7gu")
+
+[node name="Player" parent="." index="1"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74227e-08, 0, -1, -14.4, 0.2, -22.8)
+can_freefly = false
+look_speed = 0.001
+
+[node name="elevator" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 2, -20.2)
+
+[node name="world" type="CSGCombiner3D" parent="." index="3"]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 0, 0)
+use_collision = true
+collision_layer = 16
+collision_mask = 15
+
+[node name="floor" type="CSGBox3D" parent="world" index="0"]
+size = Vector3(50, 1, 50)
+material = ExtResource("4_7d56s")
+
+[node name="ceiling" type="CSGBox3D" parent="world" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+size = Vector3(50, 1, 50)
+material = ExtResource("4_7d56s")
+
+[node name="walls" type="CSGCombiner3D" parent="world" index="2"]
+
+[node name="wall1" type="CSGBox3D" parent="world/walls" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 3, 0)
+size = Vector3(1, 6, 50)
+material = ExtResource("5_7d56s")
+
+[node name="wall2" type="CSGBox3D" parent="world/walls" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 25)
+size = Vector3(50, 6, 1)
+material = ExtResource("5_7d56s")
+
+[node name="wall3" type="CSGBox3D" parent="world/walls" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 3, 0)
+size = Vector3(1, 6, 50)
+material = ExtResource("5_7d56s")
+
+[node name="wall4" type="CSGBox3D" parent="world/walls" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -25)
+size = Vector3(50, 6, 1)
+material = ExtResource("5_7d56s")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="world" index="3"]
+transform = Transform3D(1.24997, 0, 0, 0, 1.25, 0, 0, 0, 1.24997, -18.125, 2.2375, -25)
+operation = 2
+calculate_tangents = false
+size = Vector3(5, 2.8, 1)
+
+[node name="lights" type="CSGCombiner3D" parent="world" index="4"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="world/lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 4.3, 14.1)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_c1p2k")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D4" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="world/lights" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 4.3, -16.7)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_c1p2k")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D5" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="world/lights" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 4.3, -1.6)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_c1p2k")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D6" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="world/lights" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 4.3, 14.1)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_c1p2k")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D7" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="world/lights" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 4.3, -16.7)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_c1p2k")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D8" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="world/lights" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4, 4.3, 14.1)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_c1p2k")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D10" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="world/lights" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4, 4.3, -16.7)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_c1p2k")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D11" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="world/lights" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4, 4.3, -1.6)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_c1p2k")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D12" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="Node3D" type="Node3D" parent="." index="5"]
+
+[node name="cubicle" parent="Node3D" index="0" instance=ExtResource("5_ep7gu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.8, 1.7, 18)
+
+[node name="cubicle2" parent="Node3D" index="1" instance=ExtResource("5_ep7gu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 1.7, 18)
+
+[node name="cubicle3" parent="Node3D" index="2" instance=ExtResource("5_ep7gu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.8, 1.7, 10.1)
+
+[node name="cubicle4" parent="Node3D" index="3" instance=ExtResource("5_ep7gu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 1.7, 10.1)
+
+[node name="cubicle5" parent="Node3D" index="4" instance=ExtResource("5_ep7gu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.8, 1.7, 2.2)
+script = null
+
+[node name="cubicle6" parent="Node3D" index="5" instance=ExtResource("5_ep7gu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 1.7, 2.2)
+
+[node name="cubicle7" parent="Node3D" index="6" instance=ExtResource("5_ep7gu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.8, 1.7, -5.8)
+
+[node name="cubicle8" parent="Node3D" index="7" instance=ExtResource("5_ep7gu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 1.7, -5.8)
+
+[node name="cubicle9" parent="Node3D" index="8" instance=ExtResource("5_ep7gu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.8, 1.7, -12.5)
+
+[node name="cubicle10" parent="Node3D" index="9" instance=ExtResource("5_ep7gu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7, 1.7, -12.5)
+
+[node name="NPC" parent="." index="6" instance=ExtResource("6_c1p2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.39464, 0.655199, 1.75463)
+
+[node name="NPCArea" type="Area3D" parent="NPC" index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/NPCArea" index="0"]
+shape = SubResource("SphereShape3D_c1p2k")
+
+[connection signal="body_entered" from="NPC/NPCArea" to="." method="_on_npc_area_body_entered"]
+[connection signal="body_exited" from="NPC/NPCArea" to="." method="_on_npc_area_body_exited"]

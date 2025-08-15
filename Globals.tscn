@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c00oypi1yeglp"]
+
+[ext_resource type="Script" uid="uid://bwrpr1mrhd561" path="res://Globals.gd" id="1_acxym"]
+[ext_resource type="AudioStream" uid="uid://mki4n8dfxyid" path="res://assets/sfx/gun-fire-346766.mp3" id="2_7ukqg"]
+
+[node name="Globals" type="Node"]
+script = ExtResource("1_acxym")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7ukqg")

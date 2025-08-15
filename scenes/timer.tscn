@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxtq4k06fxdgk"]
+
+[ext_resource type="Script" uid="uid://6vu6s1v7numa" path="res://scenes/timer.gd" id="1_srplv"]
+
+[node name="Control" type="Timer"]
+wait_time = 3600.0
+one_shot = true
+autostart = true
+script = ExtResource("1_srplv")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

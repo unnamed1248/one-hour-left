@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bxh83bh53g4ty"]
+
+[ext_resource type="Texture2D" uid="uid://biemc4a56mae5" path="res://assets/concrete_Poliigon_ConcreteFloorPoured_7656_BaseColor.jpg" id="1_xhenf"]
+[ext_resource type="Texture2D" uid="uid://1nxia3rvi4qk" path="res://assets/concrete_Poliigon_ConcreteFloorPoured_7656_Metallic_2K_jpg-Poliigon_ConcreteFloorPoured_7656_Roughness_2K_jpg.png" id="2_us5me"]
+[ext_resource type="Texture2D" uid="uid://iqa3wjtaxw8f" path="res://assets/concrete_Poliigon_ConcreteFloorPoured_7656_Normal.png" id="3_boybt"]
+
+[resource]
+resource_name = "Poliigon_ConcreteFloorPoured_7656_2K"
+cull_mode = 2
+albedo_texture = ExtResource("1_xhenf")
+metallic = 1.0
+metallic_texture = ExtResource("2_us5me")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_us5me")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_boybt")

@@ -1,0 +1,340 @@
+[gd_scene load_steps=23 format=3 uid="uid://co2g35pxxrqqp"]
+
+[ext_resource type="Script" uid="uid://cu7hu3veqgd8m" path="res://scenes/computer.gd" id="1_8pqrt"]
+[ext_resource type="FontFile" uid="uid://cgiw3r5qp43a3" path="res://Noto_Sans/NotoSans-VariableFont_wdth,wght.ttf" id="2_ur38h"]
+[ext_resource type="Theme" uid="uid://xvkxo4afyb68" path="res://assets/icons/button_theme.tres" id="3_tjrug"]
+[ext_resource type="Texture2D" uid="uid://bhcrs36f34m71" path="res://assets/icons/browser.png" id="4_tjrug"]
+[ext_resource type="Texture2D" uid="uid://dnn4mwig7quvu" path="res://assets/icons/folder.svg" id="5_uiul0"]
+[ext_resource type="Texture2D" uid="uid://bed2f575506eu" path="res://assets/ui/map.png" id="6_k4214"]
+[ext_resource type="Texture2D" uid="uid://bsf5o71r2javn" path="res://assets/icons/file.svg" id="6_ruko6"]
+[ext_resource type="Texture2D" uid="uid://d3jp8waxw43vn" path="res://assets/ui/esc.png" id="6_ur38h"]
+[ext_resource type="FontFile" uid="uid://bk31lk4em7s3k" path="res://Noto_Sans/static/NotoSans-Regular.ttf" id="9_o4fko"]
+
+[sub_resource type="Theme" id="Theme_o4fko"]
+
+[sub_resource type="Image" id="Image_o4fko"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 191, 255, 255, 255, 191, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 96, 255, 255, 255, 96, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_o4fko"]
+image = SubResource("Image_o4fko")
+
+[sub_resource type="Image" id="Image_88chw"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 128, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 129, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 129, 255, 255, 255, 128, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id="ImageTexture_n81s5"]
+image = SubResource("Image_88chw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlfat"]
+content_margin_left = 10.0
+content_margin_top = 28.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.25, 0.25, 0.25, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 8.0
+expand_margin_top = 32.0
+expand_margin_right = 8.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6j5k"]
+content_margin_left = 10.0
+content_margin_top = 28.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.4, 0.4, 0.4, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 8.0
+expand_margin_top = 32.0
+expand_margin_right = 8.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="Theme" id="Theme_ruko6"]
+Button/fonts/font = null
+Window/colors/title_color = Color(0.875, 0.875, 0.875, 1)
+Window/colors/title_outline_modulate = Color(0, 0, 0, 1)
+Window/constants/close_h_offset = 18
+Window/constants/close_v_offset = 24
+Window/constants/resize_margin = 4
+Window/constants/title_height = 36
+Window/constants/title_outline_size = 0
+Window/font_sizes/title_font_size = 16
+Window/fonts/title_font = ExtResource("2_ur38h")
+Window/icons/close = SubResource("ImageTexture_o4fko")
+Window/icons/close_pressed = SubResource("ImageTexture_n81s5")
+Window/styles/embedded_border = SubResource("StyleBoxFlat_wlfat")
+Window/styles/embedded_unfocused_border = SubResource("StyleBoxFlat_c6j5k")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ur38h"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_ur38h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4214"]
+bg_color = Color(0.301961, 0.301961, 0.301961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4fko"]
+bg_color = Color(0, 0, 0, 0.498039)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_88chw"]
+default_font = ExtResource("9_o4fko")
+Button/font_sizes/font_size = 20
+Button/styles/normal = SubResource("StyleBoxFlat_o4fko")
+
+[node name="computer" type="Control" node_paths=PackedStringArray("file_explorer", "browser", "text_editor", "image_viewer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_o4fko")
+script = ExtResource("1_8pqrt")
+file_explorer = NodePath("ItemList/FileExplorer/FEWindow")
+browser = NodePath("ItemList/Browser/BrowserWindow")
+text_editor = NodePath("ItemList/FileExplorer/FEWindow/BoxContainer/Important_txt/TextEditor")
+image_viewer = NodePath("ItemList/FileExplorer/FEWindow/BoxContainer/Map/ImageViewer")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ruko6")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ur38h")
+
+[node name="FileExplorer" type="Button" parent="ItemList"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 212.0
+offset_right = -1118.0
+offset_bottom = -347.0
+theme = ExtResource("3_tjrug")
+theme_override_font_sizes/font_size = 16
+text = "
+
+
+
+
+
+File Explorer"
+icon = ExtResource("5_uiul0")
+icon_alignment = 1
+
+[node name="FEWindow" type="Window" parent="ItemList/FileExplorer"]
+auto_translate_mode = 1
+title = "File Explorer"
+position = Vector2i(241, 36)
+size = Vector2i(800, 500)
+visible = false
+
+[node name="BoxContainer" type="BoxContainer" parent="ItemList/FileExplorer/FEWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -262.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.766239, 0.766239)
+theme_override_constants/separation = 50
+
+[node name="Important_txt" type="Button" parent="ItemList/FileExplorer/FEWindow/BoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ur38h")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k4214")
+text = "IMPORTANT.txt"
+icon = ExtResource("6_ruko6")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="TextEditor" type="Window" parent="ItemList/FileExplorer/FEWindow/BoxContainer/Important_txt"]
+title = "IMPORTANT.txt - Text Editor"
+initial_position = 2
+size = Vector2i(500, 300)
+visible = false
+
+[node name="TextEdit" type="TextEdit" parent="ItemList/FileExplorer/FEWindow/BoxContainer/Important_txt/TextEditor"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hello all,
+Under orders from the President, we are to launch our entire reserve of nuclear missiles immediately. The launch will commence immediately after refueling, which is expected to take approximately one hour, finishing around midnight.
+
+CEO of Lycaon Defense Industries
+
+This message can be reread as IMPORTANT.txt on your computer."
+wrap_mode = 1
+
+[node name="Map" type="Button" parent="ItemList/FileExplorer/FEWindow/BoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ur38h")
+theme_override_styles/normal = SubResource("StyleBoxFlat_k4214")
+text = "Map.png"
+icon = ExtResource("6_ruko6")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="ImageViewer" type="Window" parent="ItemList/FileExplorer/FEWindow/BoxContainer/Map"]
+auto_translate_mode = 1
+title = "Map.png"
+initial_position = 2
+size = Vector2i(512, 512)
+visible = false
+unresizable = true
+
+[node name="TextureRect" type="TextureRect" parent="ItemList/FileExplorer/FEWindow/BoxContainer/Map/ImageViewer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_k4214")
+
+[node name="Browser" type="Button" parent="ItemList"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 1.0
+offset_right = 162.0
+offset_bottom = 185.0
+theme = ExtResource("3_tjrug")
+theme_override_font_sizes/font_size = 16
+text = "
+
+
+
+
+
+
+Web Browser"
+icon = ExtResource("4_tjrug")
+icon_alignment = 1
+
+[node name="BrowserWindow" type="Window" parent="ItemList/Browser"]
+title = "News - Browser"
+position = Vector2i(100, 100)
+size = Vector2i(800, 500)
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemList/Browser/BrowserWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ItemList/Browser/BrowserWindow/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Nation Collapse seems imminent"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ItemList/Browser/BrowserWindow/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Between large strikes, strengthening rebel forces, and meddling from international powers, it seems that this empire is set to fall."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="ItemList/Browser/BrowserWindow/VBoxContainer"]
+layout_mode = 2
+text = " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut nibh at augue convallis faucibus. Suspendisse cursus sit amet erat in dictum. Praesent nisl nisi, feugiat sed metus ac, interdum dapibus urna. Nam non urna sit amet metus pulvinar feugiat. Mauris eu sagittis elit, quis varius purus. Donec faucibus ullamcorper nunc non viverra. Cras sit amet velit nunc. Sed venenatis, risus venenatis pretium tempus, felis ante faucibus orci, sed maximus nunc felis quis metus. Quisque convallis, nunc nec mollis eleifend, felis lacus tincidunt nisi, at pulvinar quam tortor eu massa. Sed venenatis sagittis felis accumsan rutrum. Praesent cursus libero vitae mi venenatis aliquet. Mauris at purus at urna placerat viverra. Fusce at consectetur libero, quis tristique nibh. Nulla non semper lorem. Nullam et orci diam.
+
+In tempor eros id elit auctor, quis pretium leo fringilla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed lacinia enim nec est condimentum, a iaculis magna molestie. Cras rhoncus placerat tellus, a dictum tortor ultrices ut. Phasellus gravida finibus mollis. Suspendisse sit amet mi suscipit, scelerisque libero a, rutrum erat. Nullam et eleifend felis."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="ContactUs" type="Button" parent="ItemList/Browser/BrowserWindow/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Contact Us"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="ItemList/Browser/BrowserWindow"]
+initial_position = 1
+size = Vector2i(222, 77)
+unresizable = true
+theme = SubResource("Theme_88chw")
+ok_button_text = "Yes"
+dialog_text = "Leak the story to the media"
+cancel_button_text = "No"
+
+[node name="AcceptDialog" type="AcceptDialog" parent="ItemList/Browser/BrowserWindow"]
+initial_position = 2
+size = Vector2i(275, 77)
+unresizable = true
+theme = SubResource("Theme_88chw")
+dialog_text = "You have already leaked this story."
+
+[node name="esc" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.0
+offset_right = 54.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme = ExtResource("3_tjrug")
+texture = ExtResource("6_ur38h")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_bottom = 131.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_o4fko")
+theme_override_font_sizes/font_size = 40
+text = "17:24"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="ItemList/FileExplorer" to="." method="_on_file_explorer_pressed"]
+[connection signal="close_requested" from="ItemList/FileExplorer/FEWindow" to="." method="_on_fe_window_close_requested"]
+[connection signal="pressed" from="ItemList/FileExplorer/FEWindow/BoxContainer/Important_txt" to="." method="_on_important_txt_pressed"]
+[connection signal="close_requested" from="ItemList/FileExplorer/FEWindow/BoxContainer/Important_txt/TextEditor" to="." method="_on_text_editor_close_requested"]
+[connection signal="pressed" from="ItemList/FileExplorer/FEWindow/BoxContainer/Map" to="." method="_on_map_pressed"]
+[connection signal="close_requested" from="ItemList/FileExplorer/FEWindow/BoxContainer/Map/ImageViewer" to="." method="_on_image_viewer_close_requested"]
+[connection signal="pressed" from="ItemList/Browser" to="." method="_on_browser_pressed"]
+[connection signal="close_requested" from="ItemList/Browser/BrowserWindow" to="." method="_on_browser_window_close_requested"]
+[connection signal="pressed" from="ItemList/Browser/BrowserWindow/VBoxContainer/ContactUs" to="." method="_on_contact_us_pressed"]
+[connection signal="canceled" from="ItemList/Browser/BrowserWindow/ConfirmationDialog" to="." method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="ItemList/Browser/BrowserWindow/ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
+[connection signal="canceled" from="ItemList/Browser/BrowserWindow/AcceptDialog" to="." method="_on_accept_dialog_confirmed"]
+[connection signal="confirmed" from="ItemList/Browser/BrowserWindow/AcceptDialog" to="." method="_on_accept_dialog_confirmed"]

@@ -1,0 +1,32 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://d1basvhwmx8v2"]
+
+[ext_resource type="Texture2D" uid="uid://dovs63wd1l6f" path="res://assets/elevator_Poliigon_MetalGalvanizedZinc_7184_BaseColor.jpg" id="1_0mw1b"]
+[ext_resource type="Shader" uid="uid://bkklj7khdhn4r" path="res://assets/shaders/elevator_button.gdshader" id="1_x7y6e"]
+[ext_resource type="Texture2D" uid="uid://bb3jieswgrigm" path="res://assets/elevator_Poliigon_MetalGalvanizedZinc_7184_Metallic_2K_jpg-Poliigon_MetalGalvanizedZinc_7184_Roughness_2K_jpg.png" id="2_x7y6e"]
+[ext_resource type="Texture2D" uid="uid://cyg66k5fnx7in" path="res://assets/elevator_Poliigon_MetalGalvanizedZinc_7184_Normal.jpg" id="3_e1rfj"]
+
+[resource]
+resource_name = "Poliigon_MetalGalvanizedZinc_7184_2K"
+render_priority = 0
+shader = ExtResource("1_x7y6e")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("1_0mw1b")
+shader_parameter/albedo_texture_size = Vector2i(2048, 2048)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/texture_metallic = ExtResource("2_x7y6e")
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 1, 0)
+shader_parameter/texture_roughness = ExtResource("2_x7y6e")
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 1.0
+shader_parameter/texture_normal = ExtResource("3_e1rfj")
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/input_color = Color(0, 0, 0, 1)
+shader_parameter/output_color = Color(1, 0, 0, 1)
+shader_parameter/emission = Color(1, 0, 0, 1)
+shader_parameter/emission_energy = 100.0
+shader_parameter/active = false

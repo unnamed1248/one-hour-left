@@ -1,0 +1,319 @@
+[gd_scene load_steps=16 format=3 uid="uid://cxijisrootcci"]
+
+[ext_resource type="PackedScene" uid="uid://ctuqhy2otx3t7" path="res://scenes/level.tscn" id="1_qo0f2"]
+[ext_resource type="Script" uid="uid://e7jja3oupike" path="res://scenes/l1.gd" id="2_cvuir"]
+[ext_resource type="Material" uid="uid://bxh83bh53g4ty" path="res://scenes/concrete.tres" id="5_7ucg4"]
+[ext_resource type="PackedScene" uid="uid://23s27mq6257h" path="res://scenes/cubicle.tscn" id="5_ivo1j"]
+[ext_resource type="Material" uid="uid://bdr57arjyb001" path="res://scenes/hole_concrete.tres" id="5_mp0ac"]
+[ext_resource type="PackedScene" uid="uid://d0ayne60krww4" path="res://scenes/table.tscn" id="6_1iaa1"]
+[ext_resource type="PackedScene" uid="uid://b0nxd8x3mi1e6" path="res://scenes/cubiclesp.tscn" id="6_ahqi6"]
+[ext_resource type="PackedScene" uid="uid://8otldde24rlm" path="res://assets/laptopstand.glb" id="8_1bln4"]
+[ext_resource type="PackedScene" uid="uid://dabmpla6urs1i" path="res://assets/laptop.glb" id="9_bauyc"]
+[ext_resource type="PackedScene" uid="uid://dm21hl6kxmdxl" path="res://scenes/monitor.tscn" id="10_3dh3f"]
+[ext_resource type="PackedScene" uid="uid://4ckxi24wrjbb" path="res://scenes/NPC.tscn" id="11_5nmta"]
+[ext_resource type="PackedScene" uid="uid://brenbitseu4kc" path="res://assets/microwave.glb" id="12_ahqi6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvuir"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5nmta"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mp0ac"]
+radius = 2.12955
+
+[node name="L1" instance=ExtResource("1_qo0f2")]
+script = ExtResource("2_cvuir")
+
+[node name="Player" parent="." index="1"]
+can_freefly = false
+
+[node name="world" type="CSGCombiner3D" parent="." index="3"]
+use_collision = true
+collision_layer = 16
+collision_mask = 15
+
+[node name="BossRoom" type="CSGCombiner3D" parent="world" index="0"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="world/BossRoom" index="0"]
+transform = Transform3D(10, 0, 0, 0, 5, 0, 0, 0, 7.5, 20, 3, 21.25)
+material = ExtResource("5_mp0ac")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="world/BossRoom" index="1"]
+transform = Transform3D(9.5, 0, 0, 0, 4.75, 0, 0, 0, 7, 20, 2.8, 21.25)
+operation = 2
+material = ExtResource("5_mp0ac")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="world/BossRoom" index="2"]
+transform = Transform3D(2, 0, 0, 0, 3.5, 0, 0, 0, 0.5, 20, 2.25, 17.5)
+operation = 2
+material = ExtResource("5_mp0ac")
+
+[node name="lights" type="CSGCombiner3D" parent="world" index="1"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="world/lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8, 5.4, 22.7)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_cvuir")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="world/lights" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8, 5.4, 22.7)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_cvuir")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D2" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.3
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="world/lights" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 5.4, 14.1)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_cvuir")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D4" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="world/lights" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8, 5.4, 3.5)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_cvuir")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D8" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.3
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="world/lights" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 5.3, -5.9)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_cvuir")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D10" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="world/lights" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9, 5.3, -19.3)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_cvuir")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D13" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="world/lights" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8, 5.4, -22.4)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_cvuir")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D14" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.3
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="world/lights" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5.3, -22.4)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_cvuir")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D15" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.3
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="world/lights" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7, 4.9, 21.8)
+size = Vector3(1, 0.1, 1)
+material = SubResource("StandardMaterial3D_cvuir")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/CSGBox3D16" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.3
+
+[node name="floor" type="CSGBox3D" parent="world" index="2"]
+size = Vector3(50, 1, 50)
+material = ExtResource("5_7ucg4")
+
+[node name="ceiling" type="CSGBox3D" parent="world" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+size = Vector3(50, 1, 50)
+material = ExtResource("5_7ucg4")
+
+[node name="walls" type="CSGCombiner3D" parent="world" index="4"]
+
+[node name="wall1" type="CSGBox3D" parent="world/walls" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 3, 0)
+size = Vector3(1, 6, 50)
+material = ExtResource("5_mp0ac")
+
+[node name="wall2" type="CSGBox3D" parent="world/walls" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 25)
+size = Vector3(50, 6, 1)
+material = ExtResource("5_mp0ac")
+
+[node name="wall3" type="CSGBox3D" parent="world/walls" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 3, 0)
+size = Vector3(1, 6, 50)
+material = ExtResource("5_mp0ac")
+
+[node name="wall4" type="CSGBox3D" parent="world/walls" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -25)
+size = Vector3(50, 6, 1)
+material = ExtResource("5_mp0ac")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="world/walls" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8, 2.25, -25)
+operation = 2
+calculate_tangents = false
+size = Vector3(5, 3.5, 1)
+
+[node name="cubicles" type="Node3D" parent="." index="4"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -15, 1.63741, 8)
+
+[node name="cubicle" parent="cubicles" index="0" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.1, -0.1, 14.9)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle2" parent="cubicles" index="1" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.1, -0.1, 14.9)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle3" parent="cubicles" index="2" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.1, -0.1, 7.9)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle4" parent="cubicles" index="3" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.1, -0.1, 7.9)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle5" parent="cubicles" index="4" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.1, -0.1, 7.9)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle6" parent="cubicles" index="5" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.1, -0.1, 7.9)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle7" parent="cubicles" index="6" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.1, -0.1, 0.9)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle8" parent="cubicles" index="7" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.1, -0.1, 0.9)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle9" parent="cubicles" index="8" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.1, -0.1, -6.1)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle10" parent="cubicles" index="9" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.1, -0.1, -6.1)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle11" parent="cubicles" index="10" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.1, -0.1, -13.1)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle12" parent="cubicles" index="11" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.1, -0.1, -13.1)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle13" parent="cubicles" index="12" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.1, -0.1, -20.1)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle14" parent="cubicles" index="13" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.1, -0.1, -20.1)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle15" parent="cubicles" index="14" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.4132, -0.1, 14.9)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle16" parent="cubicles" index="15" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.4132, -0.1, 7.9)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle17" parent="cubicles" index="16" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.4132, -0.1, 7.9)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle18" parent="cubicles" index="17" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.4132, -0.1, 0.900001)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle19" parent="cubicles" index="18" instance=ExtResource("6_ahqi6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.4132, -0.1, -6.1)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle20" parent="cubicles" index="19" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.4132, -0.1, -13.1)
+collision_layer = 4
+collision_mask = 27
+
+[node name="cubicle21" parent="cubicles" index="20" instance=ExtResource("5_ivo1j")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33.4132, -0.1, -20.1)
+collision_layer = 4
+collision_mask = 27
+
+[node name="table" parent="." index="5" instance=ExtResource("6_1iaa1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1, 23.7)
+collision_layer = 4
+collision_mask = 27
+
+[node name="laptopstand" parent="table" index="2" instance=ExtResource("8_1bln4")]
+transform = Transform3D(0.531886, 0, -1.92798, 0, 2, 0, 1.92798, 0, 0.531886, 0.700001, 0.76553, 0.0999985)
+
+[node name="laptop" parent="table" index="3" instance=ExtResource("9_bauyc")]
+transform = Transform3D(-0.505633, -0.165042, 1.92798, -0.62059, 1.90128, -2.22087e-08, -1.83281, -0.598241, -0.531886, 0.700001, 0.69551, 0.0999985)
+
+[node name="monitor" parent="table" index="4" instance=ExtResource("10_3dh3f")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.5, 0.6, 0.299999)
+
+[node name="ComputerArea" type="Area3D" parent="table/monitor" index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="table/monitor/ComputerArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98023e-08, 0.2, -0.0995)
+shape = SubResource("BoxShape3D_5nmta")
+
+[node name="NPC" parent="." index="6" instance=ExtResource("11_5nmta")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1976, 0.645646, 2.80897)
+
+[node name="NPCArea" type="Area3D" parent="NPC" index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC/NPCArea" index="0"]
+shape = SubResource("SphereShape3D_mp0ac")
+
+[node name="table2" parent="." index="8" instance=ExtResource("6_1iaa1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.7, 1, -23.2099)
+
+[node name="microwave" parent="." index="9" instance=ExtResource("12_ahqi6")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 23.4, 1.6, -22.6)
+
+[connection signal="body_entered" from="table/monitor/ComputerArea" to="." method="_on_computer_area_body_entered"]
+[connection signal="body_exited" from="table/monitor/ComputerArea" to="." method="_on_computer_area_body_exited"]
+[connection signal="choice" from="NPC" to="." method="_on_npc_choice"]
+[connection signal="body_entered" from="NPC/NPCArea" to="." method="_on_npc_area_body_entered"]
+[connection signal="body_exited" from="NPC/NPCArea" to="." method="_on_npc_area_body_exited"]

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://crjsk3gvo6xtk"]
+
+[ext_resource type="Texture2D" uid="uid://iwpe2cpcufdq" path="res://assets/elevator_Poliigon_MetalSteelBrushed_7174_BaseColor.jpg" id="1_hm8yy"]
+[ext_resource type="Texture2D" uid="uid://cpxal4p71hcjd" path="res://assets/elevator_Poliigon_MetalSteelBrushed_7174_Metallic_2K_jpg-Poliigon_MetalSteelBrushed_7174_Roughness_2K_jpg.png" id="2_0tbpu"]
+[ext_resource type="Texture2D" uid="uid://drvbveu3wg1ad" path="res://assets/elevator_Poliigon_MetalSteelBrushed_7174_Normal.jpg" id="3_3027h"]
+
+[resource]
+resource_name = "Poliigon_MetalSteelBrushed_7174_2K"
+cull_mode = 2
+albedo_texture = ExtResource("1_hm8yy")
+metallic = 1.0
+metallic_texture = ExtResource("2_0tbpu")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_0tbpu")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_3027h")

@@ -1,0 +1,691 @@
+[gd_scene load_steps=20 format=3 uid="uid://bdtubfsbob5ya"]
+
+[ext_resource type="PackedScene" uid="uid://ctuqhy2otx3t7" path="res://scenes/level.tscn" id="1_6rye3"]
+[ext_resource type="Script" uid="uid://dyoqeh3wipoi4" path="res://scenes/l3.gd" id="2_1wsgb"]
+[ext_resource type="Material" uid="uid://bxh83bh53g4ty" path="res://scenes/concrete.tres" id="4_7oqjt"]
+[ext_resource type="Material" uid="uid://crjsk3gvo6xtk" path="res://assets/materials/Poliigon_MetalSteelBrushed_7174_2K.tres" id="4_qqpgu"]
+[ext_resource type="StyleBox" uid="uid://dssymmq32r4ge" path="res://assets/ui/dialogue.tres" id="5_ksq7b"]
+[ext_resource type="Material" uid="uid://bdr57arjyb001" path="res://scenes/hole_concrete.tres" id="6_vmb4l"]
+[ext_resource type="Texture2D" uid="uid://cno8q4rmb5tjk" path="res://assets/hole_concrete_Poliigon_ConcreteWallCladding_7856_BaseColor.jpg" id="7_6bkd3"]
+[ext_resource type="PackedScene" uid="uid://d0ayne60krww4" path="res://scenes/table.tscn" id="7_lk5f4"]
+[ext_resource type="PackedScene" uid="uid://dm21hl6kxmdxl" path="res://scenes/monitor.tscn" id="8_vmb4l"]
+[ext_resource type="Texture2D" uid="uid://bh33mq2gtjb4m" path="res://assets/hole_concrete_Poliigon_ConcreteWallCladding_7856_Normal.jpg" id="9_xvock"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5kyw"]
+resource_name = "Poliigon_ConcreteWallCladding_7856_8K"
+cull_mode = 2
+albedo_texture = ExtResource("7_6bkd3")
+metallic = 1.0
+metallic_texture_channel = 2
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("9_xvock")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1wsgb"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1wsgb"]
+size = Vector3(12.7, 5, 8.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xvock"]
+resource_name = "Poliigon_ConcreteFloorPoured_7656_8K"
+cull_mode = 2
+metallic = 1.0
+metallic_texture_channel = 2
+roughness_texture_channel = 1
+normal_enabled = true
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="Animation" id="Animation_1wsgb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Character:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Character"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Dialogue:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dialogue"]
+}
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("world/vestibule/doors/r")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -12.85, 1.95, -9.7)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("world/vestibule/doors/l")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -11.15, 1.95, -9.7)
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player:can_move")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("elevator")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["elevatorcontrol/TextureRect"],
+"method": &"get_node"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ControlGuide/e:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_jyx7f"]
+resource_name = "kill"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Character:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Security System"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Dialogue:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Scanning...", "Unauthorized entry attempted. Eliminating intruders..."]
+}
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("world/vestibule/doors/r")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array()
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("world/vestibule/doors/l")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array()
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player:can_move")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("elevator")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_hide_e"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ControlGuide:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_qqpgu"]
+resource_name = "open_door"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Character:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Security System"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Dialogue:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["Scanning...", "Finished scanning. Entry authorized."]
+}
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("world/vestibule/doors/r")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(2, 1, -12.85, 1.95, -9.7, 6, 1, -14.45, 1.95, -9.7)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("world/vestibule/doors/l")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(2, 1, -11.15, 1.95, -9.7, 6, 1, -9.55, 1.95, -9.7)
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player:can_move")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("elevator")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_hide_e"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ControlGuide:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ksq7b"]
+_data = {
+&"RESET": SubResource("Animation_1wsgb"),
+&"kill": SubResource("Animation_jyx7f"),
+&"open_door": SubResource("Animation_qqpgu")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sjg1k"]
+size = Vector3(5, 3.2, 3.8)
+
+[node name="L3" instance=ExtResource("1_6rye3")]
+script = ExtResource("2_1wsgb")
+
+[node name="Player" parent="." index="1"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74227e-08, 0, -1, 8.2, 0.4, 7.2)
+can_freefly = false
+look_speed = 0.001
+
+[node name="elevator" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3, 2, -18.9)
+
+[node name="Control" type="Control" parent="." index="3"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Character" type="Label" parent="Control" index="0"]
+layout_mode = 2
+anchor_left = 0.297656
+anchor_top = 0.740278
+anchor_right = 0.39375
+anchor_bottom = 0.772222
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = ExtResource("5_ksq7b")
+text = "Character"
+metadata/_edit_use_anchors_ = true
+
+[node name="Dialogue" type="Label" parent="Control" index="1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -259.5
+offset_top = -164.0
+offset_right = 259.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = ExtResource("5_ksq7b")
+text = "Dialogue"
+
+[node name="world" type="CSGCombiner3D" parent="." index="5"]
+use_collision = true
+collision_layer = 16
+collision_mask = 15
+
+[node name="floor" type="CSGBox3D" parent="world" index="0"]
+size = Vector3(37.5, 1, 37.5)
+material = ExtResource("4_7oqjt")
+
+[node name="ceiling" type="CSGBox3D" parent="world" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+size = Vector3(37.5, 1, 37.5)
+material = ExtResource("6_vmb4l")
+
+[node name="walls" type="CSGCombiner3D" parent="world" index="2"]
+
+[node name="wall1" type="CSGBox3D" parent="world/walls" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.75, 0, 0)
+size = Vector3(1, 12, 37.5)
+material = ExtResource("6_vmb4l")
+
+[node name="wall2" type="CSGBox3D" parent="world/walls" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.75)
+size = Vector3(37.5, 12, 1)
+material = ExtResource("6_vmb4l")
+
+[node name="wall3" type="CSGBox3D" parent="world/walls" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.75, 0, 0)
+size = Vector3(1, 12, 37.5)
+material = ExtResource("6_vmb4l")
+
+[node name="wall4" type="CSGBox3D" parent="world/walls" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18.75)
+size = Vector3(37.5, 12, 1)
+material = ExtResource("6_vmb4l")
+
+[node name="floor2" type="CSGBox3D" parent="world" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+size = Vector3(37.5, 1, 37.5)
+material = ExtResource("4_7oqjt")
+
+[node name="walls2" type="CSGCombiner3D" parent="world" index="4"]
+
+[node name="wall" type="CSGBox3D" parent="world/walls2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, -3, 5.8)
+size = Vector3(1, 6, 25)
+material = SubResource("StandardMaterial3D_v5kyw")
+
+[node name="wall2" type="CSGBox3D" parent="world/walls2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, -3, -7.2)
+size = Vector3(25, 6, 1)
+material = SubResource("StandardMaterial3D_v5kyw")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="world" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.325, 2.25, -18.85)
+operation = 2
+calculate_tangents = false
+size = Vector3(5, 3.5, 1.3)
+
+[node name="lights" type="CSGCombiner3D" parent="world" index="6"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+
+[node name="LightBox" type="CSGBox3D" parent="world/lights" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.67, 4.3, -10.8)
+size = Vector3(1.1, 0.1, 1)
+material = SubResource("StandardMaterial3D_1wsgb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/LightBox" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="LightBox2" type="CSGBox3D" parent="world/lights" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.49, 4.3, -8.56)
+size = Vector3(1.1, 0.1, 1)
+material = SubResource("StandardMaterial3D_1wsgb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/LightBox2" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="LightBox3" type="CSGBox3D" parent="world/lights" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.27, 4.3, 9.44)
+size = Vector3(1.1, 0.1, 1)
+material = SubResource("StandardMaterial3D_1wsgb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/LightBox3" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="LightBox4" type="CSGBox3D" parent="world/lights" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.49, 4.3, 9.44)
+size = Vector3(1.1, 0.1, 1)
+material = SubResource("StandardMaterial3D_1wsgb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/LightBox4" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="LightBox5" type="CSGBox3D" parent="world/lights" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89, -0.58, 6.64)
+size = Vector3(1.1, 0.1, 1)
+material = SubResource("StandardMaterial3D_1wsgb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="world/lights/LightBox5" index="0"]
+omni_range = 64.0
+omni_attenuation = 0.5
+
+[node name="vestibule" type="CSGCombiner3D" parent="world" index="7"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="world/vestibule" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, -13.75)
+size = Vector3(1, 5, 9.1)
+material = ExtResource("4_qqpgu")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="world/vestibule" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9, 3, -9.7)
+size = Vector3(12.8, 5, 1)
+material = ExtResource("4_qqpgu")
+
+[node name="opening" type="CSGBox3D" parent="world/vestibule" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.95, -9.75)
+operation = 2
+size = Vector3(3.4, 2.9, 1.1)
+material = ExtResource("4_qqpgu")
+
+[node name="doors" type="CSGCombiner3D" parent="world/vestibule" index="3"]
+
+[node name="r" type="CSGBox3D" parent="world/vestibule/doors" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.85, 1.95, -9.7)
+size = Vector3(1.7, 2.9, 0.6)
+material = ExtResource("4_qqpgu")
+
+[node name="l" type="CSGBox3D" parent="world/vestibule/doors" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.15, 1.95, -9.7)
+size = Vector3(1.7, 2.9, 0.6)
+material = ExtResource("4_qqpgu")
+
+[node name="Area3D" type="Area3D" parent="world/vestibule" index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/vestibule/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.85, 3, -14.25)
+shape = SubResource("BoxShape3D_1wsgb")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="world" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.25, 0.4, 16.25)
+operation = 2
+size = Vector3(10, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="world" index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0.15, 16.25)
+operation = 2
+size = Vector3(9.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="world" index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.75, -0.075, 16.25)
+operation = 2
+size = Vector3(9, 0.3, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="world" index="11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -0.375, 16.25)
+operation = 2
+size = Vector3(8.5, 0.4, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="stairs" type="StaticBody3D" parent="world" index="12"]
+collision_layer = 16
+collision_mask = 15
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="world/stairs" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -0.625, 16.25)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="world/stairs" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, -0.875, 16.25)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="world/stairs" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -1.125, 16.25)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="world/stairs" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, -1.375, 16.25)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="world/stairs" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -1.625, 16.25)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="world/stairs" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, -1.875, 16.25)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="world/stairs" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -2.125, 16.25)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="world/stairs" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, -2.375, 16.25)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="world/stairs" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, -2.625, 16.25)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="world/stairs" index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.25, -2.875, 16.25)
+use_collision = true
+collision_layer = 16
+collision_mask = 15
+size = Vector3(4, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="world/stairs" index="10"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.2, -3.125, 14)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="world/stairs" index="11"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.2, -3.375, 13.5)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="world/stairs" index="12"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.2, -3.625, 13)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="world/stairs" index="13"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.2, -3.875, 12.5)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="world/stairs" index="14"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.2, -4.125, 12)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="world/stairs" index="15"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.2, -4.375, 11.5)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="world/stairs" index="16"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.2, -4.625, 11)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="world/stairs" index="17"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.2, -4.875, 10.5)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="world/stairs" index="18"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.2, -5.125, 10)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="world/stairs" index="19"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.2, -5.375, 9.5)
+size = Vector3(0.5, 0.25, 4)
+material = SubResource("StandardMaterial3D_xvock")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="world/stairs" index="20"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.2, -2.8, 6.5)
+depth = 4.0
+polygon = PackedVector2Array(-2.7, -2.8, -2.1, -2.8, -7.8, 0.1, -7.8, -0.2)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="world/stairs" index="21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8, 0.1, 16.2)
+depth = 4.0
+polygon = PackedVector2Array(-2.7, -2.8, -2.1, -2.8, -8, 0.2, -7.8, -0.2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+&"": SubResource("AnimationLibrary_ksq7b")
+}
+
+[node name="table" parent="." index="7" instance=ExtResource("7_lk5f4")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, -5, 0)
+collision_layer = 4
+collision_mask = 27
+
+[node name="monitor" parent="table" index="2" instance=ExtResource("8_vmb4l")]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0.7, 0)
+
+[node name="ComputerArea" type="Area3D" parent="table/monitor" index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="table/monitor/ComputerArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.4, 0.000500076)
+shape = SubResource("BoxShape3D_sjg1k")
+
+[connection signal="body_entered" from="world/vestibule/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="table/monitor/ComputerArea" to="." method="_on_computer_area_body_entered"]
+[connection signal="body_exited" from="table/monitor/ComputerArea" to="." method="_on_computer_area_body_exited"]
